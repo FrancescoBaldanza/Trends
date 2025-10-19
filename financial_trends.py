@@ -8,7 +8,7 @@ data = {symbol: yf.download(symbol, start="2020-01-01", end="2025-10-01") for sy
 for symbol, df in data.items():
     df.to_csv(f"data/{symbol}.csv")
 
-# ---------- Analisi ------------ #
+# ---------- Raccolta dati ------------ #
 for symbol, df in data.items():
     # Media mobile a 7 giorni: trend a breve periodo
     df['MA_7'] = df['Close'].rolling(window=7).mean()
